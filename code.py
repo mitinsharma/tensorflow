@@ -33,6 +33,7 @@ sess.run(init) #reset values to wrong
 curr_loss = float('inf')
 while(curr_loss > 0.1):
   sess.run(train, {x:x_train, y:y_train})
-  
+  curr_m, curr_b, curr_loss = sess.run([m, b, loss],{x:x_train, y:y_train})
+  print("m: %s b: %s loss: %s"%(curr_m, curr_b, curr_loss))
 
 
